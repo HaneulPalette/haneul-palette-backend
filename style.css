@@ -1,0 +1,35 @@
+:root{
+  --bg:#fbfbfd;
+  --card:#fff;
+  --muted:#6b6b78;
+  --accent:#6A5ACD;
+  --accent-2:#ffd8e2;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Arial,Helvetica,sans-serif;background:linear-gradient(#f8fbff,#fff);margin:0;color:#222}
+.container{max-width:980px;margin:28px auto;padding:20px}
+header{display:flex;align-items:center;gap:18px}
+.logo{width:84px;height:84px;border-radius:10px;object-fit:contain}
+header h1{margin:0;font-size:22px;color:var(--accent)}
+.lead{color:var(--muted);margin-top:6px}
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 8px 24px rgba(22,22,40,0.04);margin:12px 0}
+.upload .file-btn{display:inline-block;background:linear-gradient(90deg,#9fa7ff,#ffd8e2);padding:10px 16px;border-radius:12px;color:#fff;cursor:pointer}
+#fileInput{display:none}
+.hint{color:var(--muted);font-size:13px;margin-top:8px}
+.preview-area{margin-top:12px;text-align:center}
+#preview{max-width:100%;border-radius:10px;background:#f1f2f6;box-shadow:0 6px 18px rgba(10,10,30,0.03)}
+.hidden{display:none}
+.result-row{display:flex;gap:12px;flex-wrap:wrap}
+.pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#f3f3ff;color:var(--accent);font-weight:700;margin:6px 0}
+.explain{background:#fafafa;padding:8px;border-radius:8px;font-size:13px;color:#333;white-space:pre-wrap}
+.swatches{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.swatch{width:64px;height:64px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px}
+.small{padding:12px}
+.muted{color:var(--muted);font-size:13px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+.download-btn{background:linear-gradient(90deg,#6A5ACD,#7B8CFF);box-shadow:0 8px 20px rgba(106,90,205,0.12)}
+.explain-card{background:#fff8f6;padding:12px;border-radius:10px;margin-top:14px}
+.center-row{text-align:center;margin-top:14px}
+footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:720px){.result-row{flex-direction:column}header{flex-direction:column;align-items:flex-start}}
