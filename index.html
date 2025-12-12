@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Haneul Palette — Free Basic Analysis</title>
+
+  <!-- UI styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <img id="topLogo" src="logo.png" alt="Haneul Palette" class="logo" onerror="this.style.display='none'">
+      <h1>Haneul Palette — Free Basic Personal Color Test</h1>
+      <p class="lead">Upload a clear front-facing selfie in natural daylight (include some neck). Results appear instantly.</p>
+    </header>
+
+    <section class="upload card">
+      <label class="btn file-btn" for="fileInput">Choose a photo (face & neck visible)</label>
+      <input id="fileInput" type="file" accept="image/*">
+      <p class="hint">Tip: remove heavy filters and stay in daylight. Show chin + small neck area.</p>
+
+      <div class="preview-area">
+        <canvas id="preview" width="640" height="640"></canvas>
+      </div>
+    </section>
+
+    <section id="results" class="card hidden">
+      <h2>Analysis Results</h2>
+
+      <div class="result-row">
+        <div class="card small">
+          <h3>Undertone</h3>
+          <div id="undertone" class="pill"></div>
+          <pre id="undertoneExpl" class="explain"></pre>
+        </div>
+
+        <div class="card small">
+          <h3>Brightness / Depth</h3>
+          <div id="brightsoft" class="pill"></div>
+          <div id="depth" class="pill"></div>
+        </div>
+
+        <div class="card small">
+          <h3>Face Shape</h3>
+          <div id="faceShape" class="pill"></div>
+          <pre id="shapeTip" class="explain"></pre>
+        </div>
+      </div>
+
+      <div class="card small">
+        <h3>Starter Color Guide (6 swatches)</h3>
+        <div id="swatches" class="swatches"></div>
+      </div>
+
+      <div class="card small">
+        <h3>Basic Makeup Suggestions</h3>
+        <ul id="makeupList" class="muted"></ul>
+      </div>
+
+      <div class="card small">
+        <h3>Top Outfit Colours</h3>
+        <div id="outfitSwatches" class="swatches"></div>
+      </div>
+
+      <div class="explain-card">
+        <h4>How this works</h4>
+        <ol>
+          <li>We sample a cheek patch and a neck patch to reduce background & lighting noise.</li>
+          <li>Undertone is estimated by cheek vs neck red/blue balance.</li>
+          <li>Brightness & contrast inform Light/Deep and Bright/Soft classification.</li>
+        </ol>
+        <p class="muted">This is an automated estimation — for a professional Korean in-person consultation choose a paid service.</p>
+      </div>
+
+      <div class="center-row">
+        <button id="downloadPDF" class="btn download-btn">Download My Analysis (PDF)</button>
+      </div>
+    </section>
+
+    <footer class="muted small">
+      © Haneul Palette — Online analysis may differ from in-person results.
+    </footer>
+  </main>
+
+  <!-- hidden image element used for logo->canvas conversion for PDF -->
+  <img id="pdfLogo" src="logo.png" style="display:none" alt="logo">
+
+  <script src="script.js"></script>
+</body>
+</html>
